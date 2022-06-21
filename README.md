@@ -6,6 +6,9 @@ Full stack web application with login authorization/authentication and full CRUD
 -one-to-many association between a user and castles
 -many-to-many association between castles and their features (i.e. square footage, location, number of bedrooms, etc.)
 
+<img width="1001" alt="image" src="https://user-images.githubusercontent.com/99378787/174894221-de1bc5b3-e1d9-4165-bf91-351d86bbffb1.png">
+
+
 **If you have issues with pg gem bundle install on Mac**
 
 
