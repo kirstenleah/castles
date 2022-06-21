@@ -7,6 +7,8 @@ Full stack web application with login authorization/authentication and full CRUD
 -many-to-many association between castles and their features (i.e. square footage, location, number of bedrooms, etc.)
 
 **If you have issues with pg gem bundle install on Mac**
+
+
 Install Homebrew:
 
 ```
