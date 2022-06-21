@@ -2,8 +2,9 @@
 
 ## Description
 
-This project is scaffolded so that you can build a React frontend and Rails
-backend together, and easily deploy them to Heroku.
+Full stack web application with login authorization/authentication and full CRUD functionalities for browsing, editing, creating and removing real estate listings focused on castles
+-one-to-many association between a user and castles
+-many-to-many association between castles and their features (i.e. square footage, location, number of bedrooms, etc.)
 
 ## Requirements
 
