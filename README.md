@@ -6,6 +6,22 @@ Full stack web application with login authorization/authentication and full CRUD
 -one-to-many association between a user and castles
 -many-to-many association between castles and their features (i.e. square footage, location, number of bedrooms, etc.)
 
+**If you have issues with pg gem bundle install on Mac**
+Install Homebrew:
+
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+Then run:
+```
+brew install libpq
+echo 'export PATH="/usr/local/opt/libpq/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+bundle
+```
+Then kill and restart terminals (all VS Code and Mac terminals)
+
+
 ## Requirements
 
 - Ruby 2.7.4
