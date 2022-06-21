@@ -22,12 +22,12 @@ We will be using React.js (front end), JavaScript, React Routing, Fetch, RESTful
 
 # Wire Frames
 
-![wire frame 1](/storage/wire1.jpg)
-![wire frame 2](/storage/wire2.jpg)
+![wire frame 1](/readme-imgs/wire1.jpg)
+![wire frame 2](/readme-imgs/wire2.jpg)
 
 # Schema
 
-![schema](/storage/schema.png)
+![schema](/readme-imgs/schema.png)
 
 # Stretch Goals
 
