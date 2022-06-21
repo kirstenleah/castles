@@ -27,7 +27,7 @@ We will be using React.js (front end), JavaScript, React Routing, Fetch, RESTful
 
 # Schema
 
-![schema](/readme-imgs/schema.png)
+![schema](/readme-imgs/Schema.png)
 
 # Stretch Goals
 
