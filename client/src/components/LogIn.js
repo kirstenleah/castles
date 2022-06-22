@@ -26,8 +26,9 @@ function LogIn() {
               <label>Password</label>
               <input type="password" id="password" />
             </div>
-            <button type="submit">New Account</button>
+
             <button type="submit">Login</button>
+            <button type="submit">New Account</button>
           </form>
         </div>
       </div>

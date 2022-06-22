@@ -12,7 +12,7 @@ function WelcomeText() {
             <img src={logo} alt="company logo" id="logo" />
           </h1>
         </h3>
-        <h3>... where you can call your dreams home.</h3>
+        <h3>... where we call your dreams home.</h3>
       </div>
     </div>
   );

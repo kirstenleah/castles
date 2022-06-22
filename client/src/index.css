@@ -31,11 +31,10 @@ body {
   height: 3.5rem;
   filter: invert(0.9);
 }
-
 #input-form-container {
   height: 60rem;
   padding: 7rem;
-  /* background-color: black; */
+  background-color: rgba(4, 21, 84, 255);
 }
 /* --------------------- WELCOME TEXT --------------------- */
 .idx-wt {
@@ -81,7 +80,7 @@ h2 {
   font-size: 28px;
   margin-bottom: 20px;
   font-weight: 400;
-  color: #0025f4d6;
+  color: rgba(4, 21, 84, 255);
 }
 .input-parent {
   display: block;
@@ -91,7 +90,7 @@ label {
   display: block;
   font-size: 16px;
   margin-bottom: 8px;
-  color: #001653;
+  color: rgba(4, 21, 84, 255);
 }
 .input-parent input {
   padding: 10px 8px;
@@ -113,7 +112,7 @@ label {
 button {
   padding: 10px 18px;
   font-size: 18px;
-  background: #717ea4;
+  background: #04155493;
   width: 100%;
   border: none;
   border-radius: 4px;
