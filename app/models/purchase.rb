@@ -2,5 +2,6 @@ class Purchase < ApplicationRecord
   belongs_to :user
   belongs_to :castle
 
-  validates :purchase, uniqueness: { scope: %i[user_id castle_id] }
+  # makes sure we can only have a unique user_id and castle_id combo
+  validates :user_id, uniqueness: { scope: %i[castle_id] }
 end
