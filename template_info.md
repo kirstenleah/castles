@@ -345,3 +345,15 @@ For additional support, check out these guides on Heroku:
 [postgres downloads page]: https://postgresapp.com/downloads.html
 [heroku rails deploying guide]: https://devcenter.heroku.com/articles/getting-started-with-rails6
 [troubleshooting guide on heroku]: https://devcenter.heroku.com/articles/getting-started-with-rails6#troubleshooting
+
+<!-- ☘️ ☘️ ☘️ ☘️ ☘️ ☘️ ☘️ ☘️ ☘️ ☘️ ☘️ ERIN'S NOTES  ☘️ ☘️ ☘️ ☘️ ☘️ ☘️ ☘️ ☘️ ☘️ ☘️ ☘️  -->
+
+# to create a new universal user for postgres (bc/ fatal socket error)
+
+# $: createuser --interactive --pwprompt
+
+# once created, or if you already have one
+
+# $: createuser -s -r ErinVB
+
+# $: rails db:create <---makes the API DB so you can migrate or whatever
