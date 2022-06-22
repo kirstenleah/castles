@@ -16,7 +16,7 @@ function NavBar() {
     setAtHome((atHome) => !atHome);
     history.push("/account");
   }
-  console.log("At Home?", atHome);
+  // console.log("At Home?", atHome);
 
   return (
     <nav>
