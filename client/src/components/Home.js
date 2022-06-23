@@ -1,10 +1,29 @@
+import { useState, useEffect } from "react";
+
 import NavBar from "./NavBar";
 import Castle from "./Castle";
 import logoImg from "../images/logo.png";
 
-function Home({ castles, purchaseCastle }) {
+function Home() {
+  const [castles, setCastles] = useState([]);
+
+  // ------------ FETCH AREA ------------ //
+  useEffect(() => {
+    fetch("/castles", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((r) => r.json())
+      .then(setCastles)
+      .catch((err) => console.log("💀 GET INDEX CASTLES", err));
+  }, []);
+  console.log("🏰 Castles Array:", castles);
+  // ------------ FETCH AREA ------------ //
+
   const renderCastles = castles.map((castle, idx) => {
-    return <Castle castle={castle} key={idx} purchaseCastle={purchaseCastle} />;
+    return <Castle castle={castle} key={idx} />;
   });
 
   return (

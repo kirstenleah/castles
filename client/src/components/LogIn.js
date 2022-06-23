@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+
 import castle from "../images/watercolor1.png";
 import logoImg from "../images/logo.png";
 
@@ -7,6 +9,8 @@ function LogIn({ setUsers }) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState([]);
 
+  const history = useHistory();
+
   function handleSubmit(e) {
     e.preventDefault();
     const user = {
@@ -14,8 +18,7 @@ function LogIn({ setUsers }) {
       password,
     };
 
-    console.log(user);
-
+    // --------FETCH -------//
     fetch("/login", {
       method: "POST",
       headers: {
@@ -28,10 +31,17 @@ function LogIn({ setUsers }) {
           setUsers(user);
         });
       } else {
-        res.json().then((json) => setError(json.error));
+        res.json().then((json) => setError(json.error, error));
       }
     });
   }
+  // console.log("LOG IN:", user);
+  // -------------- FETCH ------------//
+  const logInApp = (e) => {
+    e.preventDefault();
+    history.push("/home");
+  };
+
   return (
     <>
       <div className="idx-wt">
@@ -58,16 +68,29 @@ function LogIn({ setUsers }) {
 
             <div className="input-parent">
               <label>Username</label>
-              <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+              <input
+                type="text"
+                id="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
             </div>
 
             <div className="input-parent">
               <label>Password</label>
-              <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </div>
 
-            <button type="submit">Login</button>
-            <button type="submit">New Account</button>
+            <button type="submit" onClick={logInApp}>
+              Login
+            </button>
+
+            {/* <button type="submit">New Account</button> */}
           </form>
         </div>
       </div>
