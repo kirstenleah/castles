@@ -11,6 +11,7 @@ kori = User.create!(username: 'Kori Donato', password: 'bronzeBB8')
 bar = User.create!(username: 'Bárðr Alfonz', password: '2BorNot2B')
 jane = User.create!(username: 'Jane Akachi', password: '1945appleJ')
 her = User.create!(username: 'Hersilia Petronia', password: 'Charollette4eve')
+nik = User.create!(username: 'nick', password: 'testing')
 
 pp 'Planting castle seeds... 🏰'
 c1 =

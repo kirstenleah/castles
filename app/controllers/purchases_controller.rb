@@ -13,7 +13,7 @@ class PurchasesController < ApplicationController
     render json: buy, status: :ok
   end
 
-  # POST /purchases
+  # POST /purchases/:user_id&:castle_id
   def create
     castle_buying = Castle.find(params[:castle_id])
 
@@ -25,6 +25,7 @@ class PurchasesController < ApplicationController
     else
       new_buy = Purchase.create!(purchase_params)
       castle_buying.toggle!(:is_sold)
+      #TODO: Maybe change the new_buy json reponse to something else that represents the updated is_sold data
       render json: new_buy, status: :created
     end
   end

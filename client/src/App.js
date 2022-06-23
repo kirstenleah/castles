@@ -1,10 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import LogIn from "./components/LogIn";
 import Home from "./components/Home";
@@ -61,7 +56,7 @@ function App() {
       <Router>
         <Switch>
           <Route path="/login">
-            <LogIn />
+            <LogIn setUsers={setUsers} />
           </Route>
 
           <Route path="/navbar">
