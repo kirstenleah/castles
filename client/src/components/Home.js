@@ -4,7 +4,7 @@ import NavBar from "./NavBar";
 import Castle from "./Castle";
 import logoImg from "../images/logo.png";
 
-function Home() {
+function Home({ user }) {
   const [castles, setCastles] = useState([]);
 
   // ------------ FETCH AREA ------------ //
@@ -28,7 +28,7 @@ function Home() {
 
   return (
     <div>
-      <NavBar />
+      <NavBar user={user} />
       <div className="home-logo-text">
         The Castle Shop © <img src={logoImg} alt="logo" className="logo" />
       </div>

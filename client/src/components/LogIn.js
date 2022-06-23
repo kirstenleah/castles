@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { createStore } from "state-pool";
 
 import castle from "../images/watercolor1.png";
 import logoImg from "../images/logo.png";
 
-function LogIn({ setUsers }) {
+function LogIn({ setUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState([]);
-
   const history = useHistory();
+  const store = createStore();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -18,7 +19,7 @@ function LogIn({ setUsers }) {
       password,
     };
 
-    // --------FETCH -------//
+    // -------------- FETCH ------------ //
     fetch("/login", {
       method: "POST",
       headers: {
@@ -28,19 +29,15 @@ function LogIn({ setUsers }) {
     }).then((res) => {
       if (res.ok) {
         res.json().then((user) => {
-          setUsers(user);
+          setUser(user);
+          history.push("/home");
         });
       } else {
         res.json().then((json) => setError(json.error, error));
       }
     });
   }
-  // console.log("LOG IN:", user);
-  // -------------- FETCH ------------//
-  const logInApp = (e) => {
-    e.preventDefault();
-    history.push("/home");
-  };
+  // -------------- FETCH ------------ //
 
   return (
     <>
@@ -86,9 +83,7 @@ function LogIn({ setUsers }) {
               />
             </div>
 
-            <button type="submit" onClick={logInApp}>
-              Login
-            </button>
+            <button type="submit">Login</button>
 
             {/* <button type="submit">New Account</button> */}
           </form>

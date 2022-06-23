@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-function NavBar() {
+function NavBar({ user }) {
   const [atHome, setAtHome] = useState(true);
-  const tempUsername = "Dracula";
 
   return (
     <nav>
-      <p className="nav-item">Hello {tempUsername}</p>
+      {user ? <p className="nav-item">Hello {user.username}</p> : null}
 
       {atHome === true ? (
         <NavLink
