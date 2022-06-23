@@ -7,7 +7,7 @@ import Account from "./components/Account";
 
 function App() {
   const [castles, setCastles] = useState([]);
-  const [users, setUsers] = useState([]);
+  // const [users, setUsers] = useState([]);
   const [purchases, setPurchases] = useState([]);
 
   // ------------ FETCH AREA  ------------  //
@@ -24,21 +24,21 @@ function App() {
   }, []);
   // console.log("🏰 Castles Array:", castles);
   // ------------ FETCH AREA  ------------  //
-  useEffect(() => {
-    fetch("/users", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((r) => r.json())
-      .then(setUsers)
-      .catch((err) => console.log("💀 GET INDEX USERS", err));
-  }, []);
+  // useEffect(() => {
+  //   fetch("/users", {
+  //     method: "GET",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   })
+  //     .then((r) => r.json())
+  //     .then(setUsers)
+  //     .catch((err) => console.log("💀 GET INDEX USERS", err));
+  // }, []);
   // console.log("🧍 Users Array:", users);
   // ------------ FETCH AREA  ------------  //
   useEffect(() => {
-    fetch("http://localhost:3000/purchases", {
+    fetch("/purchases", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -48,8 +48,30 @@ function App() {
       .then(setPurchases)
       .catch((err) => console.log("💀 GET INDEX PURCHASES", err));
   }, []);
-  // console.log("💰 Purchases Array:", purchases);
+  console.log("💰 Purchases Array:", purchases);
   // ------------ FETCH AREA  ------------  //
+
+  function purchaseCastle(castle) {
+    let data = { castle_id: castle.id, user_id: 5 };
+
+    // ----------- FETCH AREA -------------- //
+    fetch("/purchases", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        console.log("Successfully added purchase:", data);
+      })
+      .catch((error) => {
+        console.error("Error adding new purchase:", error);
+      });
+    // ------------ FETCH AREA  ------------  //
+  }
 
   return (
     <div id="app">
@@ -68,7 +90,7 @@ function App() {
           </Route>
 
           <Route path="/home">
-            <Home castles={castles} />
+            <Home castles={castles} purchaseCastle={purchaseCastle} />
           </Route>
 
           <Redirect to="/login"></Redirect>
