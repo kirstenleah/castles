@@ -17,7 +17,7 @@ function App() {
 
   // ------------ FETCH AREA  ------------  //
   useEffect(() => {
-    fetch("http://localhost:3000/castles", {
+    fetch("/castles", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -30,7 +30,7 @@ function App() {
   // console.log("🏰 Castles Array:", castles);
   // ------------ FETCH AREA  ------------  //
   useEffect(() => {
-    fetch("http://localhost:3000/users", {
+    fetch("/users", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

@@ -11,7 +11,7 @@ function Home({ castles }) {
         <img src={castle.image} alt="castle" className="castle-imgs" />
         <p>{castle.description}</p>
         <button>Purchase</button>
-        <button>🤍</button>
+        {/* <button>🤍</button> */}
       </div>
     );
   });
