@@ -14,7 +14,7 @@
 body {
   /* background: #abbdd0; */
   background: linear-gradient(#abbdd0, #041554f7);
-  background-size: cover;
+  background-size: fit-content;
   background-repeat: no-repeat;
 }
 /* --------------------- LOG ON PAGE --------------------- */
@@ -213,13 +213,27 @@ nav {
 }
 .purchased {
   width: 40vw;
-  height: 90vh;
-  border: 1px black solid;
+  height: fit-content;
   margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 1rem;
+  border-radius: 12px;
+  background-color: white;
+  border: 1px black solid;
 }
 .liked {
   width: 40vw;
   height: 90vh;
   border: 1px black solid;
   margin: 2rem;
+}
+.users-castle-img {
+  border: black 2px solid;
+  border-radius: 12px;
+  height: 30vh;
+  max-width: 30vw;
 }

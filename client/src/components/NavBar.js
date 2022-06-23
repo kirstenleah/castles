@@ -1,22 +1,9 @@
 import { useState } from "react";
-import { NavLink, useHistory } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
   const [atHome, setAtHome] = useState(true);
   const tempUsername = "Dracula";
-  const history = useHistory();
-
-  function toHome(e) {
-    e.preventDefault();
-    setAtHome((atHome) => !atHome);
-    history.push("/home");
-  }
-  function toAccount(e) {
-    e.preventDefault();
-    setAtHome((atHome) => !atHome);
-    history.push("/account");
-  }
-  // console.log("At Home?", atHome);
 
   return (
     <nav>
@@ -24,33 +11,31 @@ function NavBar() {
 
       {atHome === true ? (
         <NavLink
-          className="nav-item"
           to="/account"
-          onClick={toAccount}
+          onClick={() => setAtHome(false)}
           style={{ textDecoration: "none" }}
+          className="nav-item"
         >
-          <p>Account</p>
+          Home
         </NavLink>
-      ) : null}
+      ) : (
+        <NavLink
+          to="/home"
+          onClick={() => setAtHome(true)}
+          style={{ textDecoration: "none" }}
+          className="nav-item"
+        >
+          Account
+        </NavLink>
+      )}
 
       <NavLink
-        className="nav-item"
         to="/logout"
         style={{ textDecoration: "none" }}
+        className="nav-item"
       >
-        <p>Log Out</p>
+        Log Out
       </NavLink>
-
-      {atHome === false ? (
-        <NavLink
-          className="nav-item"
-          to="/home"
-          onClick={toHome}
-          style={{ textDecoration: "none" }}
-        >
-          <p>Home</p>
-        </NavLink>
-      ) : null}
     </nav>
   );
 }
