@@ -10,8 +10,8 @@ function LogIn({ setUsers }) {
   function handleSubmit(e) {
     e.preventDefault();
     const user = {
-      name: username,
-      password: password,
+      username,
+      password,
     };
 
     console.log(user);
