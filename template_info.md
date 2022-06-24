@@ -357,3 +357,55 @@ For additional support, check out these guides on Heroku:
 # $: createuser -s -r ErinVB
 
 # $: rails db:create <---makes the API DB so you can migrate or whatever
+
+// ------------ FETCH AREA ------------ //
+// useEffect(() => {
+// fetch("/castles", {
+// method: "GET",
+// headers: {
+// "Content-Type": "application/json",
+// },
+// })
+// .then((r) => r.json())
+// .then(setCastles)
+// .catch((err) => console.log("💀 GET INDEX CASTLES", err));
+// }, []);
+// console.log("🏰 Castles Array:", castles);
+// ------------ FETCH AREA ------------ //
+
+// ------------ FETCH AREA ------------ //
+// useEffect(() => {
+// fetch("/purchases", {
+// method: "GET",
+// headers: {
+// "Content-Type": "application/json",
+// },
+// })
+// .then((r) => r.json())
+// .then(setPurchases)
+// .catch((err) => console.log("💀 GET INDEX PURCHASES", err));
+// }, []);
+// console.log("💰 Purchases Array:", purchases);
+// // ------------ FETCH AREA ------------ //
+
+// function purchaseCastle(castle) {
+// let data = { castle_id: castle.id, user_id: 5 };
+
+// ----------- FETCH AREA -------------- //
+// fetch("/purchases", {
+// method: "POST",
+// headers: {
+// "Content-Type": "application/json",
+// Accept: "application/json",
+// },
+// body: JSON.stringify(data),
+// })
+// .then((r) => r.json())
+// .then((data) => {
+// console.log("Successfully added purchase:", data);
+// })
+// .catch((error) => {
+// console.error("Error adding new purchase:", error);
+// });
+// ------------ FETCH AREA ------------ //
+// }

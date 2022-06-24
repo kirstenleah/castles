@@ -1,16 +1,16 @@
 pp 'Starting to garden. 👩‍🌾 🌱 🌦'
 
 pp 'Planting user seeds... 🤩'
-nat = User.create!(username: 'Natasha Vincent', password: 'chordquest8')
-mel = User.create!(username: 'Melody Lynn', password: 'gr8tfulplanA')
-conor = User.create!(username: 'Conor McGrath', password: '$990gold')
-kim = User.create!(username: 'Kim Liu', password: 'red42hot!')
-darin = User.create!(username: 'Darin Hackette', password: 'JellyDonut$$')
-tom = User.create!(username: 'Tommy-Lee Holland', password: 'MIBlack22')
-kori = User.create!(username: 'Kori Donato', password: 'bronzeBB8')
-bar = User.create!(username: 'Bárðr Alfonz', password: '2BorNot2B')
-jane = User.create!(username: 'Jane Akachi', password: '1945appleJ')
-her = User.create!(username: 'Hersilia Petronia', password: 'Charollette4eve')
+nat = User.create!(username: 'Natasha', password: 'chordquest8')
+mel = User.create!(username: 'Melody', password: 'gr8tfulplanA')
+conor = User.create!(username: 'Conor', password: '$990gold')
+kim = User.create!(username: 'Kimi', password: 'red42hot!')
+darin = User.create!(username: 'Darin', password: 'JellyDonut$$')
+tom = User.create!(username: 'Tommy-Lee', password: 'MIBlack22')
+kori = User.create!(username: 'Kori', password: 'bronzeBB8')
+bar = User.create!(username: 'Bárðr', password: '2BorNot2B')
+jane = User.create!(username: 'Jane', password: '1945appleJ')
+her = User.create!(username: 'Hersilia', password: 'Charollette4eve')
 nik = User.create!(username: 'nick', password: 'testing')
 
 pp 'Planting castle seeds... 🏰'
@@ -48,7 +48,7 @@ c3 =
     location: 'Houston, Texas',
     price: 10_000_000,
     likes: 0,
-    is_sold: true,
+    is_sold: false,
   )
 c4 =
   Castle.create!(
@@ -96,7 +96,7 @@ c7 =
     location: 'Pembs, Wales',
     price: 720_000,
     likes: 0,
-    is_sold: true,
+    is_sold: false,
   )
 c8 =
   Castle.create!(
@@ -149,7 +149,5 @@ c11 =
 
 pp 'Finishing up with their purchases... 💰'
 Purchase.create!(user_id: kori.id, castle_id: c11.id)
-Purchase.create!(user_id: jane.id, castle_id: c3.id)
-Purchase.create!(user_id: conor.id, castle_id: c7.id)
 
 pp 'Done with seeding. 🥱'
