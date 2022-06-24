@@ -142,8 +142,9 @@ nav {
   font-family: "Aladin", cursive;
   color: white;
   font-size: 2rem;
-  background: rgba(255, 255, 255, 0.058);
+  /* background: rgba(255, 255, 255, 0.058); */
 }
+
 .nav-item {
   /* outline: solid red 1px; */
   width: 20rem;
@@ -182,7 +183,7 @@ nav {
   max-width: 60vw;
   border: 3px white solid;
   margin: 0 2rem 3rem 2rem;
-  background-color: rgba(207, 197, 212, 0.648);
+  background-color: rgba(207, 197, 212, 0.398);
   font-family: "Aladin", cursive;
 }
 .render-castles h2 {
@@ -215,6 +216,8 @@ nav {
   display: flex;
   justify-content: center;
   gap: 2rem;
+  background-color: rgb(255, 255, 255);
+  background-size: 100%;
 }
 .purchased {
   width: 40vw;
@@ -227,23 +230,13 @@ nav {
   text-align: center;
   padding-top: 1rem;
   border-radius: 12px;
-  background-color: white;
+  background-color: rgba(74, 128, 176, 0.368);
   border: 1px black solid;
 }
-.reviews {
-  width: 40vw;
-  height: fit-content;
-  margin: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding-top: 1rem;
-  border-radius: 12px;
-  background-color: white;
-  border: 1px black solid;
+.holder {
+  padding-bottom: 3rem;
 }
+
 .users-castle-img {
   border: black 2px solid;
   border-radius: 12px;

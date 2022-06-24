@@ -2,7 +2,7 @@ import React from "react";
 
 function Purchase({ purchase }) {
   return (
-    <div>
+    <div className="holder">
       <h3>{purchase.castle.title}</h3>
       <h5>{purchase.castle.location}</h5>
       <img

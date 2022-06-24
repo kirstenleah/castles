@@ -42,8 +42,8 @@ function Account({ user }) {
           {renderPurchases}
         </div>
 
-        <div className="reviews">
-          <h2>Purchased Homes:</h2>
+        <div className="purchased">
+          <h2>Previous Purchases:</h2>
           {renderReviews}
         </div>
       </div>

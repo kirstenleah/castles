@@ -8,7 +8,7 @@ function NavBar({ user }) {
   }
 
   return (
-    <nav>
+    <nav className="account-nav">
       {user ? <p className="nav-text">Hello {user.username}</p> : null}
 
       <NavLink

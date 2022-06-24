@@ -32,6 +32,7 @@ function LogIn({ setUser }) {
         });
       } else {
         res.json().then((json) => setError(json.error, error));
+        alert("Incorrect name or password.");
       }
     });
   }
@@ -82,8 +83,6 @@ function LogIn({ setUser }) {
             </div>
 
             <button type="submit">Login</button>
-
-            {/* <button type="submit">New Account</button> */}
           </form>
         </div>
       </div>

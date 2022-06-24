@@ -2,7 +2,7 @@ import React from "react";
 
 function Reviews({ purchase }) {
   return (
-    <div>
+    <div className="holder">
       <h3>{purchase.castle.title}</h3>
       <h4>Owner: {purchase.user.username}</h4>
       <h5>{purchase.castle.location}</h5>
