@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AcNavBar from "./AcNavBar";
 import Purchase from "./Purchase";
+import Reviews from "./Reviews";
 
 function Account({ user }) {
   const [purchases, setPurchases] = useState([]);
@@ -25,6 +26,12 @@ function Account({ user }) {
     }
   });
 
+  const renderReviews = purchases.map((purchase, idx) => {
+    if (purchase.user.id !== user.id) {
+      return <Reviews purchase={purchase} key={idx} />;
+    }
+  });
+
   return (
     <div>
       <AcNavBar user={user} />
@@ -33,6 +40,11 @@ function Account({ user }) {
         <div className="purchased">
           <h2>{user.username}'s Castles:</h2>
           {renderPurchases}
+        </div>
+
+        <div className="reviews">
+          <h2>Purchased Homes:</h2>
+          {renderReviews}
         </div>
       </div>
     </div>

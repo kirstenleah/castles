@@ -230,11 +230,19 @@ nav {
   background-color: white;
   border: 1px black solid;
 }
-.liked {
+.reviews {
   width: 40vw;
-  height: 90vh;
-  border: 1px black solid;
+  height: fit-content;
   margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 1rem;
+  border-radius: 12px;
+  background-color: white;
+  border: 1px black solid;
 }
 .users-castle-img {
   border: black 2px solid;
