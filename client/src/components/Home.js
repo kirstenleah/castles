@@ -19,11 +19,12 @@ function Home({ user }) {
       .then(setCastles)
       .catch((err) => console.log("💀 GET INDEX CASTLES", err));
   }, []);
-  console.log("🏰 Castles Array:", castles);
-  // ------------ FETCH AREA ------------ //
+  // console.log("🏰 Castles Array:", castles);
 
   const renderCastles = castles.map((castle, idx) => {
-    return <Castle castle={castle} key={idx} />;
+    if (castle.is_sold !== true) {
+      return <Castle castle={castle} key={idx} user={user} />;
+    }
   });
 
   return (

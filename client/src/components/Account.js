@@ -1,20 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "./NavBar";
+import Purchase from "./Purchase";
 
-function Account({ purchases }) {
-  // console.log(purchases);
+function Account({ user }) {
+  const [purchases, setPurchases] = useState([]);
+  // ------------ FETCH AREA ------------ //
+  useEffect(() => {
+    fetch("/purchases", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((r) => r.json())
+      .then(setPurchases)
+      .catch((err) => console.log("💀 GET INDEX PURCHASES", err));
+  }, []);
+  console.log("💰 Purchases Array:", purchases);
+  // ------------ FETCH AREA ------------ //
+
   const renderPurchases = purchases.map((purchase, idx) => {
-    return (
-      <div key={idx}>
-        <h3>{purchase.castle.title}</h3>
-        <h5>{purchase.castle.location}</h5>
-        <img
-          src={purchase.castle.image}
-          alt="castle"
-          className="users-castle-img"
-        />
-      </div>
-    );
+    if (purchase.user.id === user.id) {
+      return <Purchase purchase={purchase} key={idx} />;
+    }
   });
 
   return (
@@ -23,12 +31,9 @@ function Account({ purchases }) {
 
       <div className="account-container">
         <div className="purchased">
-          <h2>Purchased Castles:</h2>
+          <h2>{user.username}'s Castles:</h2>
           {renderPurchases}
         </div>
-        {/* <div className="liked">
-          <h2>Saved Castles:</h2>
-        </div> */}
       </div>
     </div>
   );

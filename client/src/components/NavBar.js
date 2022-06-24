@@ -1,37 +1,38 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 function NavBar({ user }) {
-  const [atHome, setAtHome] = useState(true);
+  function handleExit() {
+    fetch("/logout", {
+      method: "DELETE",
+    });
+  }
 
   return (
     <nav>
       {user ? <p className="nav-item">Hello {user.username}</p> : null}
 
-      {atHome === true ? (
-        <NavLink
-          to="/account"
-          onClick={() => setAtHome(false)}
-          style={{ textDecoration: "none" }}
-          className="nav-item"
-        >
-          Home
-        </NavLink>
-      ) : (
-        <NavLink
-          to="/home"
-          onClick={() => setAtHome(true)}
-          style={{ textDecoration: "none" }}
-          className="nav-item"
-        >
-          Account
-        </NavLink>
-      )}
+      <NavLink
+        to="/account"
+        style={{ textDecoration: "none" }}
+        className="nav-item"
+      >
+        Account
+      </NavLink>
+
+      <NavLink
+        to="/home"
+        style={{ textDecoration: "none" }}
+        className="nav-item"
+      >
+        Home
+      </NavLink>
 
       <NavLink
         to="/logout"
         style={{ textDecoration: "none" }}
         className="nav-item"
+        onClick={handleExit}
       >
         Log Out
       </NavLink>

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { createStore } from "state-pool";
 
 import castle from "../images/watercolor1.png";
 import logoImg from "../images/logo.png";
@@ -10,7 +9,6 @@ function LogIn({ setUser }) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState([]);
   const history = useHistory();
-  const store = createStore();
 
   function handleSubmit(e) {
     e.preventDefault();

@@ -5,14 +5,12 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import NavBar from "./components/NavBar";
+
 import LogIn from "./components/LogIn";
 import Home from "./components/Home";
-// import Account from "./components/Account";
+import Account from "./components/Account";
 
 function App() {
-  // const [castles, setCastles] = useState([]);
-  // const [purchases, setPurchases] = useState([]);
   // const [users, setUsers] = useState(null);
   const [user, setUser] = useState();
 
@@ -31,6 +29,7 @@ function App() {
         }
       });
   }, []);
+  // ------------ FETCH AREA ------------ //
 
   return (
     <div id="app">
@@ -41,7 +40,7 @@ function App() {
           </Route>
 
           <Route path="/account">
-            {/* <Account purchases={purchases} /> */}
+            <Account user={user} />
           </Route>
 
           <Route path="/home">
