@@ -1,6 +1,6 @@
-import { NavLink, useHistory } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-function NavBar({ user }) {
+function AcNavBar({ user }) {
   function handleExit() {
     fetch("/logout", {
       method: "DELETE",
@@ -12,11 +12,11 @@ function NavBar({ user }) {
       {user ? <p className="nav-text">Hello {user.username}</p> : null}
 
       <NavLink
-        to="/account"
+        to="/home"
         style={{ textDecoration: "none" }}
         className="nav-item"
       >
-        Account
+        Home
       </NavLink>
 
       <NavLink
@@ -31,4 +31,4 @@ function NavBar({ user }) {
   );
 }
 
-export default NavBar;
+export default AcNavBar;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import NavBar from "./NavBar";
+import AcNavBar from "./AcNavBar";
 import Purchase from "./Purchase";
 
 function Account({ user }) {
@@ -27,7 +27,7 @@ function Account({ user }) {
 
   return (
     <div>
-      <NavBar />
+      <AcNavBar user={user} />
 
       <div className="account-container">
         <div className="purchased">

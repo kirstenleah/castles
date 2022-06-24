@@ -138,10 +138,9 @@ nav {
   gap: 5rem;
   justify-content: center;
   text-decoration: none;
-  cursor: pointer;
+
   font-family: "Aladin", cursive;
   color: white;
-  cursor: pointer;
   font-size: 2rem;
   background: rgba(255, 255, 255, 0.058);
 }
@@ -149,9 +148,15 @@ nav {
   /* outline: solid red 1px; */
   width: 20rem;
   text-align: center;
+  cursor: pointer;
 }
 .nav-item:visited {
   color: white;
+}
+.nav-text {
+  width: 20rem;
+  text-align: center;
+  cursor: not-allowed;
 }
 /* --------------------- HOME PAGE --------------------- */
 .home-logo-text {
